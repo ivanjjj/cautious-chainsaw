@@ -1,0 +1,14 @@
+name: cautious-chainsaw
+title: cautious-chainsaw
+username:
+account: ivanjjj
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3985544
+bundleId: 4486028
+url: https://ivanjjj.shinyapps.io/cautious-chainsaw/
+when: 1618734079.12816
+lastSyncTime: 1618734079.12818
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .Rapp.history|.RData|index.html|index.md|index.Rpres|README.md
