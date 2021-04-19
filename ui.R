@@ -13,10 +13,8 @@ library(plotly)
 type_choices <- read.csv("type_choices.csv")
 Regionname_choices <- read.csv("Regionname_choices.csv")
 
-# Define UI for application that draws a histogram
 shinyUI(fluidPage(
 
-    # Application title
     titlePanel("Melbourne House Price Predictor"),
 
     sidebarLayout(
@@ -27,12 +25,11 @@ shinyUI(fluidPage(
                         min = 0, max = 48, value = 4),
 
         ),
-
         mainPanel(
             textOutput("prediction"),
             htmlOutput("linebreak"),
-            plotlyOutput("house_plot")
-
+            plotlyOutput("house_plot"),
+            includeMarkdown("documentation.md")
         )
     )
 ))

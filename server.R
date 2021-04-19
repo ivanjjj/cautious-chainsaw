@@ -13,7 +13,6 @@ library(plotly)
 house_price_table <- read.csv("house_price_table.csv")
 fit <- readRDS("fit.rds")
 
-# Define server logic required to draw a histogram
 shinyServer(function(input, output) {
     output$house_plot <- renderPlotly({
         output_table <- filter(house_price_table, Var1 == as.factor(input$regionname))
@@ -31,8 +30,6 @@ shinyServer(function(input, output) {
         fig <- fig %>% layout(xaxis = x, yaxis = y, title="Distribution of House Price by Selected Region")
         fig
         })
-
-
 
     output$prediction <- renderText({
 
