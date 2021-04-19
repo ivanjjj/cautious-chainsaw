@@ -1,37 +1,54 @@
-index
+cautious-chainsaw
 ========================================================
-author:
-date:
+author: Ivan Jennings
+date: 19-04-2021
 autosize: true
 
-First Slide
+What is cautious-chainsaw?
 ========================================================
 
-For more details on authoring R presentations please visit <https://support.rstudio.com/hc/en-us/articles/200486468>.
+cautious-chainsaw is a simple prediction app hosted on the shiny apps website.
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+- Enter basic house details
+- The shiny app will produce a prediction
+- Dynamically updates when selection features
 
-Slide With Code
+Interface
 ========================================================
+
+![screnshot of app](cautious-chainsaw-screenshot.png)
+
+
+Dynamic Plot
+========================================================
+
+The plot included on the app is based on the following data
 
 
 ```r
-summary(cars)
+house_price_table <- read.csv("house_price_table.csv", row.names = 1)
+head(house_price_table, n=10)
 ```
 
 ```
-     speed           dist       
- Min.   : 4.0   Min.   :  2.00  
- 1st Qu.:12.0   1st Qu.: 26.00  
- Median :15.0   Median : 36.00  
- Mean   :15.4   Mean   : 42.98  
- 3rd Qu.:19.0   3rd Qu.: 56.00  
- Max.   :25.0   Max.   :120.00  
+                   Regionname       Price Freq
+1        Eastern Metropolitan   $0k-$200k    0
+2            Eastern Victoria   $0k-$200k    0
+3       Northern Metropolitan   $0k-$200k    3
+4           Northern Victoria   $0k-$200k    0
+5  South-Eastern Metropolitan   $0k-$200k    0
+6       Southern Metropolitan   $0k-$200k    3
+7        Western Metropolitan   $0k-$200k    8
+8            Western Victoria   $0k-$200k    0
+9        Eastern Metropolitan $200k-$400k   14
+10           Eastern Victoria $200k-$400k    2
 ```
 
-Slide With Plot
+Conclusion
 ========================================================
 
-![plot of chunk unnamed-chunk-2](index-figure/unnamed-chunk-2-1.png)
+This is a simple app that can quickly provide an estimate of a house price in Melbourne.
+
+Check it out: https://ivanjjj.shinyapps.io/cautious-chainsaw/
+
+Credit to anthonypino for the data source: https://www.kaggle.com/anthonypino/melbourne-housing-market

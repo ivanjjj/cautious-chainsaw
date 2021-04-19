@@ -10,23 +10,23 @@
 library(shiny)
 library(dplyr)
 library(plotly)
-house_price_table <- read.csv("house_price_table.csv")
+house_price_table <- read.csv("house_price_table.csv", row.names = 1)
 fit <- readRDS("fit.rds")
 
 shinyServer(function(input, output) {
     output$house_plot <- renderPlotly({
-        output_table <- filter(house_price_table, Var1 == as.factor(input$regionname))
+        output_table <- filter(house_price_table, Regionname == as.factor(input$regionname))
 
         x <- list(
             title = "House Price",
-            categoryarray = ~Var2,
+            categoryarray = ~Price,
             categoryorder = "array"
         )
         y <- list(
             title = "Frequency"
         )
 
-        fig <- plot_ly(output_table, x=~Var2, y=~Freq, type = "bar")
+        fig <- plot_ly(output_table, x=~Price, y=~Freq, type = "bar")
         fig <- fig %>% layout(xaxis = x, yaxis = y, title="Distribution of House Price by Selected Region")
         fig
         })

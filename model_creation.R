@@ -59,8 +59,8 @@ type_choices <- levels(m_house_prices$Type)
 write.csv(Regionname_choices, file = "Regionname_choices.csv")
 write.csv(type_choices, file = "type_choices.csv")
 
-write.csv(data.frame(table(m_house_prices$Regionname,
-                           m_house_prices$Price)),
+write.csv(data.frame(table(Regionname = m_house_prices$Regionname,
+                           Price = m_house_prices$Price)),
           file = "house_price_table.csv")
 ## Save model to file
 
